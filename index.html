@@ -6,16 +6,16 @@
   <title>Thai GL Universe | Highlights, Series & Projects</title>
   <style>
     :root {
-      --bg-dark: #443fa9af;
-      --card-bg: rgba(82, 54, 91, 0.4);
-      --card-border: rgba(165, 196, 212, 0.2);
-      --accent-pink: #a5c4d4;
-      --accent-purple: #8499b1;
-      --accent-muted: #7b6d8d;
-      --accent-glow: rgba(165, 196, 212, 0.25);
-      --text-main: #f3f4f6;
-      --text-sub: #b8c1ec;
-      --glass-blur: blur(14px);
+      /* Lovely Universe Theme Palette */
+      --bg-dark: #0f0c1b;
+      --card-bg: rgba(30, 22, 53, 0.55);
+      --card-border: rgba(244, 114, 182, 0.25);
+      --accent-pink: #f472b6;
+      --accent-purple: #c084fc;
+      --accent-glow: rgba(244, 114, 182, 0.35);
+      --text-main: #f9fafb;
+      --text-sub: #d1d5db;
+      --glass-blur: blur(16px);
     }
 
     * {
@@ -29,8 +29,9 @@
       background-color: var(--bg-dark);
       color: var(--text-main);
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(244, 114, 182, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(192, 132, 252, 0.12) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(244, 114, 182, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(192, 132, 252, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
       background-attachment: fixed;
       min-height: 100vh;
       line-height: 1.6;
@@ -38,7 +39,7 @@
 
     header {
       backdrop-filter: var(--glass-blur);
-      background: rgba(15, 12, 27, 0.8);
+      background: rgba(15, 12, 27, 0.85);
       border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
@@ -49,6 +50,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .logo {
@@ -58,6 +60,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 0.5px;
+      filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.3));
     }
 
     .search-container {
@@ -80,8 +83,8 @@
 
     .search-bar:focus {
       border-color: var(--accent-pink);
-      box-shadow: 0 0 12px var(--accent-glow);
-      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 15px var(--accent-glow);
+      background: rgba(255, 255, 255, 0.09);
     }
 
     .controls {
@@ -110,7 +113,8 @@
       background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
       color: #fff;
       border-color: transparent;
-      box-shadow: 0 4px 15px var(--accent-glow);
+      box-shadow: 0 4px 20px var(--accent-glow);
+      transform: translateY(-2px);
     }
 
     .container {
@@ -122,28 +126,42 @@
       gap: 1.75rem;
     }
 
+    /* Fade-In & Slide-Up Animation Effects */
+    @keyframes fadeInStagger {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 18px;
       overflow: hidden;
       backdrop-filter: var(--glass-blur);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       display: flex;
       flex-direction: column;
+      animation: fadeInStagger 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-      border-color: rgba(244, 114, 182, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 25px var(--accent-glow);
+      border-color: rgba(244, 114, 182, 0.6);
     }
 
     .card-img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      background-color: #2a2040;
+      background-color: #1a1528;
     }
 
     .card-content {
@@ -157,7 +175,7 @@
       align-self: flex-start;
       background: rgba(244, 114, 182, 0.15);
       color: var(--accent-pink);
-      border: 1px solid rgba(244, 114, 182, 0.3);
+      border: 1px solid rgba(244, 114, 182, 0.35);
       padding: 0.2rem 0.75rem;
       border-radius: 99px;
       font-size: 0.75rem;
@@ -209,11 +227,12 @@
     }
 
     .tag {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.07);
       padding: 0.25rem 0.6rem;
       border-radius: 6px;
       font-size: 0.8rem;
       color: #e5e7eb;
+      border: 1px solid rgba(255, 255, 255, 0.04);
     }
 
     .btn-detail {
@@ -226,13 +245,15 @@
       border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
       text-align: center;
     }
 
     .btn-detail:hover {
-      background: var(--accent-purple);
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
       color: #fff;
+      border-color: transparent;
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     /* Modal Styling */
@@ -242,8 +263,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
+      background: rgba(10, 8, 20, 0.8);
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -260,7 +281,7 @@
     }
 
     .modal {
-      background: #161228;
+      background: #18122d;
       border: 1px solid var(--card-border);
       border-radius: 20px;
       max-width: 600px;
@@ -269,7 +290,8 @@
       overflow-y: auto;
       padding: 2rem;
       position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(192, 132, 252, 0.2);
+      animation: fadeInStagger 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .close-btn {
@@ -287,6 +309,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background 0.2s;
     }
 
     .close-btn:hover {
@@ -300,6 +323,7 @@
       font-size: 0.85rem;
       border-top: 1px solid var(--card-border);
       margin-top: 4rem;
+      background: rgba(10, 8, 20, 0.4);
     }
 
     footer a {
@@ -311,7 +335,7 @@
 <body>
 
   <header>
-    <div class="logo">🌸 GlVerse</div>
+    <div class="logo">🪐GLVerse</div>
     <div class="search-container">
       <input type="text" id="searchInput" class="search-bar" placeholder="Search couples, series, or agencies...">
     </div>
@@ -340,7 +364,7 @@
   </footer>
 
   <script>
-    // Sample Data Source
+    // Expanded Data Source including new couples and series
     const glData = [
       {
         id: 1,
@@ -350,7 +374,7 @@
         agency: "Solenn Entertainment, Becky Entertainment",
         img: "https://i.redd.it/2eq1srssz7hh1.jpeg",
         description: "Freen Sarocha and Becky Rebecca are pioneer figures in the Thai Girls' Love industry, gaining worldwide acclaim through GAP The Series.",
-        projects: ["GAP The Series", "The Loyal Pin", "Uranus 2023 (Movie)"],
+        projects: ["GAP The Series", "The Loyal Pin", "Uranus 2323 (Movie)"],
         details: "Freen and Becky made history with the first mainstream full-length Thai GL series, 'GAP The Series', gathering billions of views across streaming platforms globally."
       },
       {
@@ -359,7 +383,7 @@
         title: "LenaMiu (Lena Schuett & Miu Taechamongkalapiwat)",
         fandom: "Fandom: Gumberbear",
         agency: "Channel 3",
-        img: "https://preview.redd.it/appreciation-post-for-my-safe-zone-lenamiu-v0-ycuncjk9at2g1.jpg?width=640&crop=smart&auto=webp&s=27e31e22f5989f8f0b38be54c7249199c1bb7068",
+        img: "https://pbs.twimg.com/media/HS1zxMJaYAAJ8VK?format=webp&name=large",
         description: "Lena Schuett & Miu Taechamongkalapiwat share the exact same birthday on November 25 (Lena born in 1999, Miu in 2001).",
         projects: ["My Safe Zone", "Pls Love"],
         details: "The two share a close real-life friendship spanning nearly a decade after meeting during university orientation."
@@ -397,16 +421,60 @@
         projects: ["Muteluv, Is This Luck", "Enemies With Benefits"],
         details: "Celebrated for their contrasting personalities, playful off-screen banter, strong on-screen chemistry, and fan events."
       },
-            {
+      {
         id: 6,
         type: "couple",
         title: "PuinoonBint (Puinoon Warangsir & Bint Sireethorn)",
         fandom: "Fandom: Thong",
         agency: "Star Hunter Entertainment",
         img: "https://i.pinimg.com/736x/41/e2/16/41e21637b65d17c819a55df173c68fe3.jpg",
-        description: "Puinoon Warangsir & Bint Sireethorn regarded as one of the most organic and rapidly growing partnerships in the 2026 Thai Girls’ Love (GL) landscape.",
+        description: "Puinoon Warangsir & Bint Sireethorn regarded as one of the most organic and rapidly growing partnerships in the Thai Girls’ Love (GL) landscape.",
         projects: ["Khom Khlang The Series"],
         details: "Widely recognized for their intense off-screen chemistry and massive fandom economy footprint."
+      },
+      {
+        id: 13,
+        type: "couple",
+        title: "OomBam (Oom Eisaya & Bam Saralee)",
+        fandom: "Fandom: Blossom",
+        agency: "CH3",
+        img: "https://preview.redd.it/fulfill-airs-today-wishing-oombam-all-the-very-best-v0-x956d1q5q4xg1.jpg?width=591&format=pjpg&auto=webp&s=08d692ebab7e45f6ffce4600c576171746cc18be",
+        description: "Oom Eisaya & Bam Saralee's real-life bond and mutual trust translate into a naturally mature and highly celebrated on-screen chemistry.",
+        projects: ["Fulfill The Series"],
+        details: "Has massive international fandom that closely tracks their joint project promotions, public appearances, and vlogs."
+      },
+      {
+        id: 14,
+        type: "couple",
+        title: "MieAya (Mie Phattaranan & Aya Orapan)",
+        fandom: "Fandom: PlusA",
+        agency: "Me Mind Y",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS181o37Pv5Uu72WnP45NiwClIp-qncy9qrlMvwWDqUcpu5WQulUO1Nk4w&s=10",
+        description: "Mie and Aya showcase powerful emotional resonance, leading anticipated fantasy and time-loop romance projects.",
+        projects: ["Love Beyond Dreams", "Aya & Mie Special Project"],
+        details: "Known for their stellar dramatic execution and deep chemistry in high-concept romance storylines."
+      },
+      {
+        id: 15,
+        type: "couple",
+        title: "LMSY (Lookmhee Punyapat & Sonya Saranphat)",
+        fandom: "Fandom: Melody",
+        agency: "GMMTV / CHANGE2561",
+        img: "https://i.redd.it/05031z7jd1ge1.jpg",
+        description: "Lookmhee Punyapat & Sonya Saranphat skyrocketed to international fame following their breakout performances in the 2024 romantic drama series, Affair.",
+        projects: ["Affair The Series", "Harmony Secret", "Hometown Romance"],
+        details: "Established themselves as a powerhouse pairing in the rapidly growing global Thai GL industry"
+      },
+      {
+        id: 16,
+        type: "couple",
+        title: "EnjoyJune (Enjoy Thidarat & June Nannirin)",
+        fandom: "Fandom: JLand",
+        agency: "Conversation",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtiymPTchV6a5_4mFmAa_aQn61o5JKq2zCAbx9tASYk-aFJY4bqHzIpVUq&s=10",
+        description: "Enjoy Thidarat & June Nannirin achieved massive recognition within the Thai entertainment industry and international LGBTQ+ fandoms for their intense on-screen chemistry and long-standing friendship",
+        projects: ["Denied Love", "Denied Love: Special"],
+        details: "widely celebrated for pioneering a \"family era\" storyline in Thai GL."
       },
       {
         id: 7,
@@ -417,7 +485,7 @@
         img: "https://nomundinhodogl.com/wp-content/uploads/2026/04/EnemiesWithBenefits.webp",
         description: "When a night of spontaneity leads them to a friends with benefits relationship, they'll do anything to keep it a secret, pretending to be enemies so that absolutely no one at work finds out.",
         projects: ["Starring: Janhae Ployshompoo", "Starring: Jingjing Yu"],
-        details: "Adapted from the web novel \"Enemies with Benefits\" (ลัลล์ไม่ชอบไวน์ Enemies With Benefits) by Snow Leopard (เสือดาวหิมะ). "
+        details: "Adapted from the web novel \"Enemies with Benefits\" (ลัลล์ไม่ชอบไวน์ Enemies With Benefits) by Snow Leopard (เสือดาวหิมะ)."
       },
       {
         id: 8,
@@ -439,7 +507,7 @@
         img: "https://preview.redd.it/thailand-pluto-ep-2-v0-pznvi7aflqvd1.jpg?width=900&format=pjpg&auto=webp&s=63ffdeb2323dcd86232c07bcae0fe159310c5065",
         description: "An intriguing story involving twin sisters, mistaken identity, and unexpected love. It brings a suspenseful narrative to the GL genre as Ai assumes her twin sister May's identity after a tragic accident.",
         projects: ["Starring: Namtan Tipnaree", "Starring: Film Rachanun"],
-        details: " Adapted from the novel \"Pluto: นิทาน ดวงดาว ความรัก\" by Chao Planoy (เจ้าปลาน้อย)."
+        details: "Adapted from the novel \"Pluto: นิทาน ดวงดาว ความรัก\" by Chao Planoy (เจ้าปลาน้อย)."
       },
       {
         id: 10,
@@ -450,7 +518,7 @@
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQieIgLFdrgpyyDjjZt54nXGWp6KvbhOx1w31RHCoSS9pd6Twr36daDEgbt&s=10",
         description: "As their endless bickering slowly gives way to undeniable attraction, sworn enemies begin to become each other's most important person.",
         projects: ["Starring: Namneung Milin", "Starring: Noey Kanteera"],
-        details: "Adapted from the novel \"The Fire\" (The Fire โซ่รักอัคนี) by Salmon (แซลม่อน).."
+        details: "Adapted from the novel \"The Fire\" (The Fire โซ่รักอัคนี) by Salmon (แซลม่อน)."
       },
       {
         id: 11,
@@ -473,6 +541,72 @@
         description: "After seven years of separation, the two reunite in a hospital emergency room, unraveling past accidents, shared dreams, and hidden secrets.",
         projects: ["Starring: Natt Nattamon", "Starring: Pitcha Pitchatorn"],
         details: "Adapted from the novel \"Reverse with me: Across Millions of Orbits\" (Reverse With Me ล้านวงโคจร) by Zezeho."
+      },
+      {
+        id: 17,
+        type: "series",
+        title: "Heartcode",
+        fandom: "Action, Romance, Drama",
+        agency: "2026",
+        img: "https://m.media-amazon.com/images/M/MV5BMzgyMzhmY2YtODk1Ny00N2RjLTliNDItOWZlYTZlMzRiYjJhXkEyXkFqcGc@._V1_QL75_UX500_CR0,172,500,281_.jpg",
+        description: "The couple's feelings are tested by duty, danger, and the cost of truth. They have to choose between justice and the love they never knew they had.",
+        projects: ["Starring: Tungpang Pattarawadee", "Starring: Jessie Natsiya"],
+        details: "An original series produced by MONOMAX"
+      },
+      {
+        id: 18,
+        type: "series",
+        title: "Shades",
+        fandom: "Mystery, Psychological Thriller",
+        agency: "2026",
+        img: "https://image.tmdb.org/t/p/w1280/inUdYNCCUXnsqei4KFWp1YvA2gd.jpg",
+        description: "At Thailand’s most elite girls’ school, rules are made to be broken. Six students and one teacher ignite a firestorm of scandal, desire, and digital revolution",
+        projects: ["Starring: Mook Worranit", "Starring: Niky Warinrat", "Starring: Opal Kulwipa", "Starring: Mint Benjanee", "Starring: Ploy Jhutamas", "Starring: England Ladamanee", "Starring: Puyfai Tharathip"],
+        details: "An original series produced by FRT Entertainment"
+      },
+      {
+        id: 19,
+        type: "series",
+        title: "Juliet & Juliet",
+        fandom: "Youth, Romance, Drama",
+        agency: "2026",
+        img: "https://img.gagaoolala.com/media/307641c1-434825-lg.jpg",
+        description: "A modern theatrical reimagining where two rival family heirs break tradition to write their own love story.",
+        projects: ["Starring: MingMing Kanyakorn", "Starring: Nepjune Nutkitta"],
+        details: "A romantic drama series that reimagines Shakespeare's Romeo and Juliet."
+      },
+      {
+        id: 20,
+        type: "series",
+        title: "Denied Love",
+        fandom: "Melodrama, Romance",
+        agency: "2025",
+        img: "https://vcover-hz-pic.wetvinfo.com/vcover_hz_pic/0/tq1qmgo66p2f38g1747829741780/0",
+        description: "Explores arranged marriage dynamics, power imbalances, grief, and emotional restraint",
+        projects: ["Starring: Enjoy Thidarat", "Starring: June Nannirin"],
+        details: "Adapated from the novel \"Rin Mai Mi Wan Rak\" (รินไม่มีวันรัก) by Peony (พีโอนี)."
+      },
+      {
+        id: 21,
+        type: "series",
+        title: "Queendom",
+        fandom: "Fantasy, Romance",
+        agency: "2025",
+        img: "https://vcover-hz-pic.wetvinfo.com/vcover_hz_pic/0/g2bste5fitcnpkv1754380893859/0",
+        description: "Chaos ensues. Most importantly, though, their feelings towards one another begin to shift as they embody one another.",
+        projects: ["Starring: P.amp Tarradee", "Starring: Arhoung Nattawadee"],
+        details: " Adapted from the novel \"Queendom\" (QUEENDOM #ซ่อนใจไว้ที่เธอ) by Salmon (แซลม่อน)."
+      },
+      {
+        id: 22,
+        type: "series",
+        title: "Mate",
+        fandom: "Drama, Romance",
+        agency: "2024",
+        img: "https://vcover-hz-pic.wetvinfo.com/vcover_hz_pic/0/5otuxjhuyyf07zc1732100043264/0",
+        description: "Childhood sweethearts, cohabitation, class/status dynamics, dealing with deep trauma, sexual assault recovery, and hidden feelings resurfacing on a wedding day.",
+        projects: ["Starring: Grace Budsarin", "Starring: Oaey Ponchanok"],
+        details: "Adapted from the novel \"Mate\" (Mate เพื่อนรัก) by Chao Planoy (เจ้าปลาน้อย)."
       }
     ];
 
@@ -494,9 +628,9 @@
       const filteredData = glData.filter(item => {
         const matchesFilter = currentFilter === 'all' || item.type === currentFilter;
         const matchesSearch = item.title.toLowerCase().includes(searchQuery) ||
-                              item.fandom.toLowerCase().includes(searchQuery) ||
-                              item.description.toLowerCase().includes(searchQuery) ||
-                              item.projects.some(p => p.toLowerCase().includes(searchQuery));
+                            item.fandom.toLowerCase().includes(searchQuery) ||
+                            item.description.toLowerCase().includes(searchQuery) ||
+                            item.projects.some(p => p.toLowerCase().includes(searchQuery));
         return matchesFilter && matchesSearch;
       });
 
@@ -505,15 +639,17 @@
         return;
       }
 
-      filteredData.forEach(item => {
+      filteredData.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'card';
+        // Stagger animation delay per card for a cascading entrance effect
+        card.style.animationDelay = `${index * 0.05}s`;
         card.innerHTML = `
           <img src="${item.img}" alt="${item.title}" class="card-img" loading="lazy">
           <div class="card-content">
             <span class="badge">${item.type}</span>
             <h2 class="card-title">${item.title}</h2>
-            <div class="fandom-name">${item.fandom} • ${item.agency}</div>
+            <div class="fandom-name">${item.fandom} | ${item.agency}</div>
             <p class="card-desc">${item.description}</p>
             <div class="project-list">
               <div class="project-title">Key Projects & Highlights</div>
@@ -521,7 +657,7 @@
                 ${item.projects.map(p => `<span class="tag">${p}</span>`).join('')}
               </div>
             </div>
-            <button class="btn-detail" onclick="openModal(${item.id})">View Details</button>
+            <button class="btn-detail" onclick="openModal('${item.id}')">View Details</button>
           </div>
         `;
         cardsGrid.appendChild(card);
@@ -530,18 +666,18 @@
 
     // Modal Handlers
     window.openModal = function(id) {
-      const item = glData.find(d => d.id === id);
+      const item = glData.find(d => d.id == id);
       if (!item) return;
 
       modalBody.innerHTML = `
         <span class="badge">${item.type}</span>
-        <h2 style="font-size: 1.75rem; margin: 0.5rem 0 0.25rem;">${item.title}</h2>
+        <h2 style="font-size: 1.75rem; margin: 0.5rem 0 0.25rem; color: #fff;">${item.title}</h2>
         <p style="color: var(--accent-purple); font-weight: 600; margin-bottom: 1rem;">${item.fandom} | ${item.agency}</p>
-        <img src="${item.img}" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
-        <p style="color: #e5e7eb; margin-bottom: 1.25rem;">${item.details}</p>
-        <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-sub); margin-bottom: 0.5rem;">Notable Projects</h4>
+        <img src="${item.img}" style="width: 100%; height: 240px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; border: 1px solid var(--card-border);">
+        <p style="color: var(--text-sub); margin-bottom: 1.25rem; line-height: 1.7;">${item.details}</p>
+        <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 0.5rem; letter-spacing: 0.5px;">Notable Projects</h4>
         <div class="tag-group">
-          ${item.projects.map(p => `<span class="tag" style="background: rgba(244,114,182,0.15);">${p}</span>`).join('')}
+          ${item.projects.map(p => `<span class="tag" style="background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.3);">${p}</span>`).join('')}
         </div>
       `;
       modalOverlay.classList.add('active');
